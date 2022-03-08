@@ -1,0 +1,26 @@
+<div class="row">
+    <!-- <div class="col">
+      <input type="text" class="form-control" placeholder="ID"  [(ngModel)]="event._id">
+    </div> -->
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Name" [(ngModel)]="event.title">
+    </div>
+    <div class="col">
+        <!-- <input type="text" class="form-control" placeholder="Date" [(ngModel)]="event.eventDate"> -->
+      <p-calendar [(ngModel)]="value" view="month" dateFormat="mm-yy-dd" [(ngModel)]="event.eventDate"></p-calendar>
+
+      </div>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="main speaker" [(ngModel)]="event.main_speaker">
+    </div>
+    <div class="col">
+    <input type="text" class="form-control" placeholder="Speakers" [(ngModel)]="event.speakers">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="students" [(ngModel)]="event.students">
+    </div>
+    <div class="col">
+        <button (click)="save()" class="btn btn-success">Save Edditing</button>
+    </div>
+
+  </div>

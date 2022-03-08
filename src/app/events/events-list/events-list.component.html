@@ -1,0 +1,33 @@
+<button (click)="load()" class="btn btn-primary">Load Events</button>
+
+<table class="table table-bordered" *ngIf="events.length > 0" #t1>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Date</th>
+        <th scope="col">Main Speaker</th>
+        <th scope="col">operatios</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of events">
+        <td>{{item._id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.eventDate}}</td>
+        <td>{{item.main_speaker}}</td>
+        <td>
+          <button class="btn btn-primary"(click)="eventDetailsId=item._id">details</button> |
+          <button (click)="eventEditId=item._id" class="btn btn-success">Edit</button> |
+          <button (click)="eventDeletId=item._id" class="btn btn-danger">Delete</button> 
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-events-details [eventId]="eventDetailsId" *ngIf="events.length > 0"></app-events-details>
+  <br>
+<app-events-edit [eventId]="eventEditId" *ngIf="events.length > 0"></app-events-edit>
+<br>
+<app-events-delete [eventId]="eventDeletId" *ngIf="events.length > 0"></app-events-delete>
+  
