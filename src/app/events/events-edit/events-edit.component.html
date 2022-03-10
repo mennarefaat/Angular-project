@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-4">
     <!-- <div class="col">
       <input type="text" class="form-control" placeholder="ID"  [(ngModel)]="event._id">
     </div> -->
@@ -17,7 +17,11 @@
     <input type="text" class="form-control" placeholder="Speakers" [(ngModel)]="event.speakers">
     </div>
     <div class="col">
-        <input type="text" class="form-control" placeholder="students" [(ngModel)]="event.students">
+      <select [(ngModel)]="event.students">
+        <option [value]="item._id" *ngFor="let item of students">{{item.fullName}}</option>
+      </select>
+
+        <!-- <input type="text" class="form-control" placeholder="students" [(ngModel)]="event.students"> -->
     </div>
     <div class="col">
         <button (click)="save()" class="btn btn-success">Save Edditing</button>

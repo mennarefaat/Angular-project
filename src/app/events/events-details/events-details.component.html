@@ -1,10 +1,15 @@
- <div class="card">
 
-    <div class="container">
-      <h4><b>{{event?.title}}</b></h4>
-      <p>{{event?.eventDate}}</p>
-      <p>{{event?.main_speaker}}</p>
-      <p>{{event?.speakers}}</p>
-      <p>{{event?.students}}</p>
-    </div>
+  <div class="card bg-light  col-4 m-4" style="text-align:center;">
+    <div class="card-header">Event Details </div>
+    <div class="card-body">
+      <h3 class="card-title">Title: {{event?.title}}</h3>
+      <h4>Date:</h4> <p class="card-text"> {{event?.eventDate}}</p>
+      <h4>Main Speaker :</h4><p class="card-text"> {{event?.main_speaker}}</p>
+      <h4>Speakers :</h4><p class="card-text"> {{event?.speakers}}</p>
+        <h4>Students</h4>
+        <h5 *ngFor="let item of student">
+          <p  *ngIf="item._id==event.students">
+            {{item.fullName}}
+          </p>
+        </h5>
   </div>

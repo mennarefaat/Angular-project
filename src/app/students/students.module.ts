@@ -11,7 +11,7 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import {MenuItem} from 'primeng/api';  
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     StudentsListComponent
   ],
   imports: [
-    CommonModule,FormsModule,CalendarModule,AccordionModule,BrowserModule,BrowserAnimationsModule
+    CommonModule,RouterModule,FormsModule,CalendarModule,AccordionModule,BrowserModule,BrowserAnimationsModule
   ],
   exports: [ 
     StudentsAddComponent,

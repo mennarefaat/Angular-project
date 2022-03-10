@@ -1,0 +1,13 @@
+/* nav {
+    padding: 0 30px;
+    text-align: center;
+    height:30%;
+    background-image: linear-gradient(to right, rgb(23, 23, 77), rgb(99, 94, 94));
+}
+a{
+    color:white;
+} */
+
+nav{
+    background-image: linear-gradient(to right, rgb(193, 193, 226), rgb(221, 221, 221));
+}
