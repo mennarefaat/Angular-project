@@ -12,7 +12,10 @@ export class EventsDeleteComponent implements OnInit, OnChanges{
   constructor(public eventService:EventsService) { }
   ngOnChanges(changes: SimpleChanges): void {
     if(!changes['eventId'].isFirstChange()){
-    this.eventService.deleteEvents(this.eventId).subscribe(a=> {console.log(a)})
+      if(confirm("Are you sure to delete ")){
+
+        this.eventService.deleteEvents(this.eventId).subscribe(a=> {console.log(a)})
+      }
   }}
 
   ngOnInit(): void {

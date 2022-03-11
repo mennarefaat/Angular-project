@@ -5,11 +5,20 @@
   
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter your Email" name="Email" >
+      <input type="text" placeholder="Enter your Email" name="Email" [(ngModel)]='user.Email'>
   
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password"  [(ngModel)]='user.password' required>
+      
+      <label for="psw"><b>Role</b></label>
+      <!-- <input type="password" placeholder="Enter your Role" name="role"  [(ngModel)]='user.role' required> -->
+      <select class="form-select" aria-label="Default select example"  name="role" [(ngModel)]='user.role'>
+        <option value="student">Student</option>
+        <option value="speaker">Speaker</option>
+        <option value="admin">Admin</option>
+      </select>
   
+     
       <button type="submit" (click)="login()">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me

@@ -8,11 +8,18 @@ import { EventsEditComponent } from './events-edit/events-edit.component';
 import { FormsModule } from '@angular/forms'
 import {CalendarModule} from 'primeng/calendar';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-import {MenuItem} from 'primeng/api';  
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
+
+
+
+
+const routes:Routes=[
+  {path:"",component:EventsListComponent},
+  {path:"edit/:id",component:EventsEditComponent},
+  {path:"details/:id",component:EventsDetailsComponent},
+  {path:"add",component:EventsAddComponent},  
+];
 
 @NgModule({
   declarations: [
@@ -24,7 +31,7 @@ import {RouterModule} from '@angular/router';
  
   ],
   imports: [
-    CommonModule,RouterModule,FormsModule,CalendarModule,AccordionModule,BrowserModule,BrowserAnimationsModule
+    CommonModule,RouterModule.forChild(routes),FormsModule,CalendarModule,AccordionModule
   ],
   exports: [
     EventsListComponent,

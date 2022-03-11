@@ -1,0 +1,6 @@
+.imgContainer {
+    width: 100vw;
+    height: 100vh;
+    background: url(../../assets/5.jpg);
+    background-size: cover;
+}

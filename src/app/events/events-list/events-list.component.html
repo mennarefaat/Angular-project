@@ -1,18 +1,19 @@
 <!-- <button (click)="load()" class="btn btn-primary">Load Events</button> -->
+<div class="btnContainer">
+  <a class="btn addButton" [routerLink]="['/events','add']" >
+    Add Department
+  </a>
+</div>
 <br>
-<a class="btn btn-primary" [routerLink]="['/events','add']" >
-  Add Department
-</a>
-<br>
-<br>
-<table class="table table-bordered" *ngIf="events.length > 0" #t1>
-    <thead>
+
+<table class="table tableCss table-striped" *ngIf="events.length > 0" #t1>
+    <thead class="bg-light">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">Date</th>
         <th scope="col">Main Speaker</th>
-        <th scope="col">operatios</th>
+        <th scope="col">Operations</th>
       </tr>
     </thead>
     <tbody>
@@ -20,20 +21,15 @@
         <td>{{item._id}}</td>
         <td>{{item.title}}</td>
         <td>{{item.eventDate}}</td>
-        <td >{{item.main_speaker}}</td>
+        <td>{{item.main_speaker}}</td>
         <td>
-          <!-- <button class="btn btn-primary"(click)="eventDetailsId=item._id">details</button> |
-          <button (click)="eventEditId=item._id" class="btn btn-success">Edit</button> | -->
-          <button (click)="eventDeletId=item._id" class="btn btn-danger">Delete</button> 
-          |<a [routerLink]="['/events','details',item._id]"  class="btn btn-success">details</a>
-          |<a [routerLink]="['/events','edit',item._id] "  class="btn btn-success">edit</a>
+          <button (click)="eventDeletId=item._id" class="btn listBtn" style="background-color: pink;">Delete</button> 
+          <a [routerLink]="['/events','details',item._id]"  class="btn listBtn" style="background-color:lightBlue;">Details</a>
+          <a [routerLink]="['/events','edit',item._id] "  class="btn listBtn" style="background-color: lightgreen;">Edit</a>
         </td>
       </tr>
     </tbody>
   </table>
-  <!-- <app-events-details [eventId]="eventDetailsId" *ngIf="events.length > 0"></app-events-details>
-  <br>
-<app-events-edit [eventId]="eventEditId" *ngIf="events.length > 0"></app-events-edit>
-<br> -->
+  
 <app-events-delete [eventId]="eventDeletId" *ngIf="events.length > 0"></app-events-delete>
   

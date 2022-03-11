@@ -1,7 +1,5 @@
-<button (click)="load()" class="btn btn-primary">Load Students</button>
-
-<table class="table table-bordered" *ngIf="students.length > 0" #t1>
-    <thead>
+<table class="table tableCss table-striped"  *ngIf="students.length > 0" #t1>
+    <thead class="bg-light">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
@@ -14,7 +12,6 @@
         <td>{{item._id}}</td>
         <td>{{item.fullName}}</td>
         <td>{{item.Email}}</td>
-        <!-- <td>{{item.password}}</td> -->
         <td>
           <!-- <button class="btn btn-primary"(click)="eventDetailsId=item._id">details</button> |
           <button (click)="eventEditId=item._id" class="btn btn-success">Edit</button> |

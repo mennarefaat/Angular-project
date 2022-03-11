@@ -9,9 +9,17 @@ import { FormsModule } from '@angular/forms'
 import {CalendarModule} from 'primeng/calendar';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';  
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { RouterModule , Routes } from '@angular/router';
+
+//student Routes
+const routes:Routes=[
+  {path:"",component:StudentsListComponent},
+  {path:"edit/:id",component:StudentsEditComponent},
+  {path:"details/:id",component:StudentsDetailsComponent},
+  {path:"add",component:StudentsAddComponent},  
+];
+
+
 
 
 @NgModule({
@@ -23,7 +31,7 @@ import { RouterModule } from '@angular/router';
     StudentsListComponent
   ],
   imports: [
-    CommonModule,RouterModule,FormsModule,CalendarModule,AccordionModule,BrowserModule,BrowserAnimationsModule
+    CommonModule,RouterModule.forChild(routes),FormsModule,CalendarModule,AccordionModule
   ],
   exports: [ 
     StudentsAddComponent,

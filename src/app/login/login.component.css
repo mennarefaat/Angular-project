@@ -1,5 +1,6 @@
 form {
     border: 3px solid #f1f1f1;
+    margin-top: 100px;
   }
   
   /* Full-width inputs */
@@ -68,4 +69,13 @@ form {
       width: 100%;
     }
   }
-  
+
+
+.formContainer{
+
+  width: 100vw;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  height: 72.5vh;
+}

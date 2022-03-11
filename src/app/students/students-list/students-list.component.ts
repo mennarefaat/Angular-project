@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { StudentsService } from 'src/app/students.service';
 import { Students } from 'src/app/_models/students';
 
@@ -14,12 +15,14 @@ export class StudentsListComponent implements OnInit {
   studentEditId=0
   studentDeleteId=0
   students:Students[]=[]
+  sub:Subscription|null=null;
 
   ngOnInit(): void {
-  }
-  load(){
-
     this.studentServe.getAllStudents().subscribe(student => {this.students=student})
   }
-  
+
+  ngOnDestroy(): void {
+    console.log("students destroyed");
+    this.sub?.unsubscribe();
+  }
 }

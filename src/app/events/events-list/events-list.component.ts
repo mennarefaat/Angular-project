@@ -18,18 +18,14 @@ export class EventsListComponent implements OnInit {
   events:Events[]=[];
   students:Students[]=[]
   sub:Subscription|null=null;
-  // load(){
-  //   this.eventServe.getAllEvents().subscribe(event=>this.events=event)
-  // }
 
   ngOnInit(): void {
     this.eventServe.getAllEvents().subscribe(event=>this.events=event)
     this.studentServe.getAllStudents().subscribe(student=>this.students=student)
   }
   ngOnDestroy(): void {
-    console.log("department destroyed");
+    console.log("events destroyed");
     this.sub?.unsubscribe();
-    //throw new Error('Method not implemented.');
   }
 
 }

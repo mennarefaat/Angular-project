@@ -1,5 +1,5 @@
 
-<div class="row mt-4">
+<div class="formContainer">
     <div class="col">
       <input type="text" class="form-control" placeholder="ID"  [(ngModel)]="newEvent._id">
     </div>
@@ -17,13 +17,13 @@
     <input type="text" class="form-control" placeholder="Speakers" [(ngModel)]="newEvent.speakers">
     </div>
     <div class="col">
-      <select [(ngModel)]="newEvent.students">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="newEvent.students">
         <option [value]="item._id" *ngFor="let item of students">{{item.fullName}}</option>
       </select>
         <!-- <input type="text" class="form-control" placeholder="students" [(ngModel)]="newEvent.students"> -->
     </div>
     <div class="col">
-        <button (click)="save()" class="btn btn-success">Save Add</button>
+        <button (click)="save()" class="btn listBtn" style="background-color: lightgray;">Save Add</button>
     </div>
 
   </div>
