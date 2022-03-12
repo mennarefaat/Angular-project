@@ -14,11 +14,11 @@ export class StudentsService {
   getStudentsById(id:number){
     return this.http.get<Students>(this.baseurl+id);
   }
-  addStudents(event:Students){
-    return this.http.post<Students>(this.baseurl,event);
+  addStudents(student:Students){
+    return this.http.post<Students>(this.baseurl,student);
   }
-  updateStudents(event:Students){
-    return this.http.put<Students>(this.baseurl+event._id,event);
+  updateStudents(student:Students){
+    return this.http.put<Students>(this.baseurl+student._id,student);
   }
   deleteStudents(id:number){
     return this.http.delete<Students>(this.baseurl+id);

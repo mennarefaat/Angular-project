@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
   {path:"events",loadChildren:()=>import("./events/events.module").then(m=>m.EventsModule)},
   {path:"students",loadChildren:()=>import("./students/students.module").then(m=>m.StudentsModule)},
+  {path:"speakers",loadChildren:()=>import("./speakers/speakers.module").then(m=>m.SpeakersModule)},
 
 ];
 

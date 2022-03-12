@@ -1,0 +1,33 @@
+<table class="table tableCss table-striped"  *ngIf="speakers.length > 0" #t1>
+    <thead class="bg-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Image</th>
+        <!-- <th scope="col">Main Speaker</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of speakers">
+        <td>{{item._id}}</td>
+        <td>{{item.fullName}}</td>
+        <td>{{item.Email}}</td>
+        <td><img [src]='item.image'>
+        </td>
+        <td>
+          <!-- <button class="btn btn-primary"(click)="eventDetailsId=item._id">details</button> |
+          <button (click)="eventEditId=item._id" class="btn btn-success">Edit</button> |
+          <button (click)="eventDeletId=item._id" class="btn btn-danger">Delete</button> 
+           -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <app-speakers-details [eventId]="eventDetailsId" *ngIf="speakers.length > 0"></app-speakers-details>
+  <br>
+<app-speakers-edit [eventId]="eventEditId" *ngIf="speakers.length > 0"></app-speakers-edit>
+<br>
+<app-speakers-delete [eventId]="eventDeletId" *ngIf="speakers.length > 0"></app-speakers-delete>
+   -->
+
