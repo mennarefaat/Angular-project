@@ -1,1 +1,12 @@
-<p>speakers-add works!</p>
+
+<div  class="formContainer">
+    <input type="text" [(ngModel)]="speaker.fullName" placeholder="Full Name">
+    <input type="text" [(ngModel)]="speaker.Email" placeholder="Email">
+    <input type="file" (input)="onFileChange($event)" >
+    <input type="text" [(ngModel)]="speaker.password" placeholder="password">
+    <input type="text" [(ngModel)]="speaker.Address" placeholder="Address">
+    <input type="text" [(ngModel)]="speaker.role" placeholder="role">
+    
+    <button (click)="save()">save</button>
+
+</div>

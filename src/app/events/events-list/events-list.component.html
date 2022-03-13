@@ -1,6 +1,6 @@
 <!-- <button (click)="load()" class="btn btn-primary">Load Events</button> -->
-<div class="btnContainer">
-  <a class="btn addButton" [routerLink]="['/events','add']" >
+<div  class="btnContainer">
+  <a  *ngIf="authSer.isAdmin" class="btn addButton" [routerLink]="['/events','add']" >
     Add New Event
   </a>
 </div>
@@ -13,7 +13,7 @@
         <th scope="col">Title</th>
         <th scope="col">Date</th>
         <th scope="col">Main Speaker</th>
-        <th scope="col">Operations</th>
+        <th *ngIf="authSer.isAdmin"  scope="col">Operations</th>
       </tr>
     </thead>
     <tbody>
@@ -23,9 +23,9 @@
         <td>{{item.eventDate}}</td>
         <td>{{item.main_speaker}}</td>
         <td>
-          <button (click)="eventDeletId=item._id" class="btn listBtn" style="background-color: pink;">Delete</button> 
-          <a [routerLink]="['/events','details',item._id]"  class="btn listBtn" style="background-color:lightBlue;">Details</a>
-          <a [routerLink]="['/events','edit',item._id] "  class="btn listBtn" style="background-color: lightgreen;">Edit</a>
+          <button (click)="eventDeletId=item._id" class="btn listBtn" *ngIf="authSer.isAdmin" style="background-color: pink;">Delete</button> 
+          <a [routerLink]="['/events','details',item._id]"  class="btn listBtn" *ngIf="authSer.isAdmin" style="background-color:lightBlue;">Details</a>
+          <a [routerLink]="['/events','edit',item._id] "  class="btn listBtn" *ngIf="authSer.isAdmin"  style="background-color: lightgreen;">Edit</a>
         </td>
       </tr>
     </tbody>

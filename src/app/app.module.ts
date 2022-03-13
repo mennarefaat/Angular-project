@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsModule } from './events/events.module';
 import {StudentsModule} from './students/students.module';
+import {SpeakersModule} from './speakers/speakers.module'
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { LoggingInterceptor } from './interptors/logging.interceptor';
+import { RegisterComponent } from './register/register.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -20,6 +23,8 @@ import { LoggingInterceptor } from './interptors/logging.interceptor';
     HomeComponent,
     LoginComponent,
     ContactComponent,
+    RegisterComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,8 @@ import { LoggingInterceptor } from './interptors/logging.interceptor';
     StudentsModule,
     CoreModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SpeakersModule
     
   ],
   providers: [

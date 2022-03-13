@@ -1,1 +1,11 @@
-<p>students-add works!</p>
+
+<div  class="formContainer">
+    <input  type="text" [(ngModel)]="newStudents.fullName" placeholder="Full Name">
+    <input  type="text" [(ngModel)]="newStudents.Email" placeholder="Email">
+    <input  type="text" [(ngModel)]="newStudents.password" placeholder="password">
+    <!-- <input type="text" [(ngModel)]="newStudents.Address" placeholder="Address"> -->
+    <input  type="text" [(ngModel)]="newStudents.role" placeholder="role">
+    
+    <button (click)="save()">save</button>
+
+</div>

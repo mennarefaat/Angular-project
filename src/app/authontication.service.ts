@@ -6,6 +6,8 @@ import { User } from './_models/user';
   providedIn: 'root'
 })
 export class AuthonticationService {
+  isLogged=false;
+  isAdmin=false;
   login(user:User){
     return this.http.post(this.baseurl,user);
   }

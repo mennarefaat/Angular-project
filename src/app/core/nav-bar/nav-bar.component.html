@@ -15,7 +15,8 @@
       <a class="navbar-brand navCont" [routerLink]="['/home']" >Home</a>
       <a class="navbar-brand navCont"[routerLink]="['/events']">Events</a>
       <a class="navbar-brand navCont" href="#">Contact</a>
-      <a class="navbar-brand navCont" [routerLink]="['/login']">login</a>
-      <a class="navbar-brand navCont" href="#">Regester</a>
+      <a class="navbar-brand navCont" [routerLink]="['/login']"  *ngIf="!authSer.isLogged">login</a>
+      <a class="navbar-brand navCont" [routerLink]="['/register']"  *ngIf="!authSer.isLogged">register</a> 
+      <a class="navbar-brand navCont" [routerLink]="['/logout']"  *ngIf="authSer.isLogged">Log Out</a> 
     </div>
   </nav>
