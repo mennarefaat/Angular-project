@@ -18,10 +18,11 @@ export class LoginComponent implements OnInit {
         console.log(a);
         this.router.navigate(['/events']);
         localStorage.setItem("token", (<any>a).token);
+        this.authSer.isLogged=true
         if(this.user.role=="admin"){
           console.log(this.user.role)
           this.authSer.isAdmin=true
-          this.authSer.isLogged=true
+         
         }
       }
     );

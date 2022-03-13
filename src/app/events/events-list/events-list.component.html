@@ -21,7 +21,7 @@
         <td>{{item._id}}</td>
         <td>{{item.title}}</td>
         <td>{{item.eventDate}}</td>
-        <td>{{item.main_speaker}}</td>
+        <td *ngFor="let speaker of speakers"><span *ngIf="speaker._id==item.main_speaker">{{speaker.fullName}}</span></td>
         <td>
           <button (click)="eventDeletId=item._id" class="btn listBtn" *ngIf="authSer.isAdmin" style="background-color: pink;">Delete</button> 
           <a [routerLink]="['/events','details',item._id]"  class="btn listBtn" *ngIf="authSer.isAdmin" style="background-color:lightBlue;">Details</a>
