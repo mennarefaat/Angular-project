@@ -1,11 +1,29 @@
 
 <div  class="formContainer">
-    <input  type="text" [(ngModel)]="newStudents.fullName" placeholder="Full Name">
-    <input  type="text" [(ngModel)]="newStudents.Email" placeholder="Email">
-    <input  type="text" [(ngModel)]="newStudents.password" placeholder="password">
-    <!-- <input type="text" [(ngModel)]="newStudents.Address" placeholder="Address"> -->
-    <input  type="text" [(ngModel)]="newStudents.role" placeholder="role">
+    <input  type="text" [(ngModel)]="newStudents.fullName" placeholder="Full Name"  #name="ngModel" class="form-control"  required minlength="4">
+    <div *ngIf="name.errors?.['required']" style="color:red">
+        Name is required.
+    </div>
+    <div *ngIf="name.errors?.['minlength']" style="color:red">
+        Name must be at least 4 characters long.
+    </div>
+
+    <input  type="text" [(ngModel)]="newStudents.Email" placeholder="Email"  #email="ngModel" class="form-control"  required>
+    <div *ngIf="email.errors?.['required']" style="color:red">
+        Email is required.
+    </div>
+
+    <input  type="text" [(ngModel)]="newStudents.password" placeholder="password"  #password="ngModel" class="form-control"  required>
+    <div *ngIf="password.errors?.['required']" style="color:red">
+        password is required.
+    </div>
+
+    <input  type="text" [(ngModel)]="newStudents.role" placeholder="role" placeholder="role"  #role="ngModel" class="form-control"  required>
+    <div *ngIf="role.errors?.['required']" style="color:red">
+        role is required.
+    </div>
     
-    <button (click)="save()">save</button>
+
+    <button (click)="save()" [disabled]="name.errors || password.errors || email.errors  || role.errors">save</button>
 
 </div>

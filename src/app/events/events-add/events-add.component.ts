@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { EventsService } from 'src/app/events.service';
-import { StudentsService } from 'src/app/students.service';
+import { EventsService } from 'src/app/services/events.service';
+import { StudentsService } from 'src/app/services/students.service';
 import { Events } from 'src/app/_models/events';
 import { Students } from 'src/app/_models/students';
 

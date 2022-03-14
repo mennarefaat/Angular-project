@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Speakers } from './_models/speakers';
+import { Speakers } from '../_models/speakers';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit ,OnChanges, SimpleChanges} from '@angular/core';
-import { EventsService } from 'src/app/events.service';
+import { EventsService } from 'src/app/services/events.service';
 
 @Component({
   selector: 'app-events-delete',

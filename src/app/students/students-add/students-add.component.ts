@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { StudentsService } from 'src/app/students.service';
+import { StudentsService } from 'src/app/services/students.service';
 import { Students } from 'src/app/_models/students';
 
 @Component({
@@ -12,6 +13,9 @@ import { Students } from 'src/app/_models/students';
 export class StudentsAddComponent implements OnInit {
   newStudents:Students= new Students(0,"","","","")
   sub:Subscription|null=null;
+  heroForm: FormGroup | undefined;
+  hero: any;
+  name=""
   constructor(public router:Router,public studentServece:StudentsService) { }
 
   save(){
@@ -23,6 +27,12 @@ export class StudentsAddComponent implements OnInit {
     )
   }
   ngOnInit(): void {
-  }
+    this.heroForm = new FormGroup({
+      name: new FormControl(this.hero.name, [
+        Validators.required,
+        Validators.minLength(4)
+    ]),
+  })
+}
 
 }

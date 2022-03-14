@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { StudentsService } from 'src/app/students.service';
+import { StudentsService } from 'src/app/services/students.service';
 import { Students } from 'src/app/_models/students';
 
 @Component({

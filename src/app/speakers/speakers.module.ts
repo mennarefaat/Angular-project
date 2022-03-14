@@ -10,14 +10,15 @@ import {CalendarModule} from 'primeng/calendar';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';  
 import { RouterModule , Routes } from '@angular/router';
+import { LoginAdminGuard } from '../guards/login-admin.guard';
 
 
 
 //speakers routes
 const routes:Routes=[
-  {path:"",component:SpeakersListComponent},
-  {path:"edit/:id",component:SpeakersEditComponent},
-  {path:"details/:id",component:SpeakersDetailsComponent},
+  {path:"",component:SpeakersListComponent,canActivate:[LoginAdminGuard]},
+  {path:"edit/:id",component:SpeakersEditComponent,canActivate:[LoginAdminGuard]},
+  {path:"details/:id",component:SpeakersDetailsComponent,canActivate:[LoginAdminGuard]},
   {path:"add",component:SpeakersAddComponent},  
 ];
 

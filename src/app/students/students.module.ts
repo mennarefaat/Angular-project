@@ -10,12 +10,13 @@ import {CalendarModule} from 'primeng/calendar';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';  
 import { RouterModule , Routes } from '@angular/router';
+import { LoginAdminGuard } from '../guards/login-admin.guard';
 
 //student Routes
 const routes:Routes=[
-  {path:"",component:StudentsListComponent},
-  {path:"edit/:id",component:StudentsEditComponent},
-  {path:"details/:id",component:StudentsDetailsComponent},
+  {path:"",component:StudentsListComponent,canActivate:[LoginAdminGuard]},
+  {path:"edit/:id",component:StudentsEditComponent,canActivate:[LoginAdminGuard]},
+  {path:"details/:id",component:StudentsDetailsComponent,canActivate:[LoginAdminGuard]},
   {path:"add",component:StudentsAddComponent},  
 ];
 

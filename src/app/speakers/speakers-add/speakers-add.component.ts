@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { SpeakersService } from 'src/app/speakers.service';
+import { SpeakersService } from 'src/app/services/speakers.service';
 import { Speakers } from 'src/app/_models/speakers';
 
 @Component({
@@ -13,6 +14,9 @@ export class SpeakersAddComponent implements OnInit {
   speakers:Speakers[]=[]
   file:any
   sub:Subscription|null=null;
+  heroForm: FormGroup | undefined;
+  hero: any;
+  name=""
 
 
   onFileChange(s:any){
@@ -29,6 +33,13 @@ export class SpeakersAddComponent implements OnInit {
   constructor(public speakerServe:SpeakersService) { }
 
   ngOnInit(): void {
-  }
+    this.heroForm = new FormGroup({
+      name: new FormControl(this.hero.name, [
+        Validators.required,
+        Validators.minLength(4)
+    ]),
+    
 
+      })
+    } 
 }

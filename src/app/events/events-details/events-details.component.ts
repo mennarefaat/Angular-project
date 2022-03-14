@@ -1,8 +1,8 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventsService } from 'src/app/events.service';
-import { SpeakersService } from 'src/app/speakers.service';
-import { StudentsService } from 'src/app/students.service';
+import { EventsService } from 'src/app/services/events.service';
+import { SpeakersService } from 'src/app/services/speakers.service';
+import { StudentsService } from 'src/app/services/students.service';
 import { Events } from 'src/app/_models/events';
 import { Speakers } from 'src/app/_models/speakers';
 import { Students } from 'src/app/_models/students';

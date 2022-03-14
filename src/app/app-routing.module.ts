@@ -5,8 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
-import { LoginGuard } from './login.guard';
-import { LoginAdminGuard } from './login-admin.guard';
+import { LoginGuard } from './guards/login.guard';
+import { LoginAdminGuard } from './guards/login-admin.guard';
+
 
 
 
@@ -17,8 +18,8 @@ const routes: Routes = [
   {path:"logout",component:LogoutComponent},
   {path:"",redirectTo:"/home",pathMatch:"full"},
   {path:"events",loadChildren:()=>import("./events/events.module").then(m=>m.EventsModule),canActivate:[LoginGuard]},
-  {path:"students",loadChildren:()=>import("./students/students.module").then(m=>m.StudentsModule),canActivate:[LoginAdminGuard]},
-  {path:"speakers",loadChildren:()=>import("./speakers/speakers.module").then(m=>m.SpeakersModule),canActivate:[LoginAdminGuard]},
+  {path:"students",loadChildren:()=>import("./students/students.module").then(m=>m.StudentsModule)},
+  {path:"speakers",loadChildren:()=>import("./speakers/speakers.module").then(m=>m.SpeakersModule)},
 
 ];
 

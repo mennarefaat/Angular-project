@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Events } from './_models/events';
+import { Events } from '../_models/events';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

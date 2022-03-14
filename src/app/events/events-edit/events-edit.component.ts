@@ -1,10 +1,10 @@
 import { Component, Input, OnInit,OnChanges, SimpleChanges } from '@angular/core';
-import { EventsService } from 'src/app/events.service';
+import { EventsService } from 'src/app/services/events.service';
 import { Events } from 'src/app/_models/events';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ActivatedRoute } from '@angular/router';
-import { StudentsService } from 'src/app/students.service'
+import { StudentsService } from 'src/app/services/students.service'
 import { Students } from 'src/app/_models/students';
 
 

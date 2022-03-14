@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { SpeakersService } from 'src/app/speakers.service';
+import { SpeakersService } from 'src/app/services/speakers.service';
 import { Speakers } from 'src/app/_models/speakers';
 
 @Component({
