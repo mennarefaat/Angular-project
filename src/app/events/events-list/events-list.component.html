@@ -6,13 +6,13 @@
 </div>
 <br>
 
-<table class="table tableCss table-striped" *ngIf="events.length > 0" #t1>
+<table class="table tableCss table-striped" *ngIf="events.length  > 0" #t1>
     <thead class="bg-light">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">Date</th>
-        <th scope="col">Main Speaker</th>
+        <th scope="col" *ngIf="authSer.isAdmin">Main Speaker</th>
         <th *ngIf="authSer.isAdmin"  scope="col">Operations</th>
       </tr>
     </thead>
@@ -21,10 +21,11 @@
         <td>{{item._id}}</td>
         <td>{{item.title}}</td>
         <td>{{item.eventDate}}</td>
-        <td *ngFor="let speaker of speakers"><span *ngIf="speaker._id==item.main_speaker">{{speaker.fullName}}</span></td>
+        <td *ngIf="authSer.isAdmin">{{item.main_speaker}}</td>
+        <!-- <td *ngFor="let speaker of speakers"><span *ngIf="speaker._id==item.main_speaker">{{speaker.fullName}}</span></td> -->
         <td>
           <button (click)="eventDeletId=item._id" class="btn listBtn" *ngIf="authSer.isAdmin" style="background-color: pink;">Delete</button> 
-          <a [routerLink]="['/events','details',item._id]"  class="btn listBtn" *ngIf="authSer.isAdmin" style="background-color:lightBlue;">Details</a>
+          <a [routerLink]="['/events','details',item._id]"  class="btn listBtn" style="background-color:lightBlue;">Details</a>
           <a [routerLink]="['/events','edit',item._id] "  class="btn listBtn" *ngIf="authSer.isAdmin"  style="background-color: lightgreen;">Edit</a>
         </td>
       </tr>

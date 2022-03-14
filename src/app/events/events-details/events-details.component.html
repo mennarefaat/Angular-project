@@ -4,12 +4,18 @@
     <div class="card-body">
       <h3 class="card-title">Title: {{event?.title}}</h3>
       <h4>Date:</h4> <p class="card-text"> {{event?.eventDate}}</p>
-      <h4>Main Speaker :</h4><p class="card-text"> {{event?.main_speaker}}</p>
+      <!-- <h4>Main Speaker :</h4><p class="card-text"> {{event?.main_speaker}}</p> -->
       <h4>Speakers :</h4><p class="card-text"> {{event?.speakers}}</p>
         <h4>Students</h4>
         <h5 *ngFor="let item of student">
           <p  *ngIf="item._id==event.students">
-            {{item.fullName}}
+            {{item.Email}}
+          </p>
+        </h5>
+        <h4>Main Speaker</h4>
+        <h5 *ngFor="let item of speaker">
+          <p  *ngIf="item._id==event.main_speaker">
+            {{item.Email}}
           </p>
         </h5>
   </div>

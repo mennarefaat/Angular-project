@@ -14,6 +14,8 @@
     <div class="navBar">
       <a class="navbar-brand navCont" [routerLink]="['/home']" >Home</a>
       <a class="navbar-brand navCont"[routerLink]="['/events']">Events</a>
+      <a class="navbar-brand navCont"  *ngIf="authSer.isAdmin" [routerLink]="['/students']">Students</a>
+      <a class="navbar-brand navCont" *ngIf="authSer.isAdmin" [routerLink]="['/speakers']">Speakers</a>
       <a class="navbar-brand navCont" href="#">Contact</a>
       <a class="navbar-brand navCont" [routerLink]="['/login']"  *ngIf="!authSer.isLogged">login</a>
       <a class="navbar-brand navCont" [routerLink]="['/register']"  *ngIf="!authSer.isLogged">register</a> 
